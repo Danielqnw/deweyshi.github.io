@@ -10,6 +10,6 @@ tag: 教程
 
 ### 1、需要准备的东西
 
-#Linux VPS，推荐购买Vultr的，按小时计费，[**传送门**](https://www.vultr.com/?ref=7435080)（我的Linux系统环境是腾讯云学生机Ubuntu Server 16.04.1 LTS 64位）
+# Linux VPS，推荐购买Vultr的，按小时计费，[**传送门**](https://www.vultr.com/?ref=7435080)（我的Linux系统环境是腾讯云学生机Ubuntu Server 16.04.1 LTS 64位）
 
-##刷了Padavan固件的路由器（我的是小米路由器青春版R1CL,padavan固件最新版）
+### 刷了Padavan固件的路由器（我的是小米路由器青春版R1CL,padavan固件最新版）
