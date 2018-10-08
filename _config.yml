@@ -3,9 +3,9 @@ title: 石头实验
 subtitle: 砳砳
 description: 欢迎来到我的个人站~
 # 头像里面的标题
-avatarTitle: 学生<br>Python
+avatarTitle: 学生
 # 头像里面的描述
-avatarDesc: 技术爱好者
+avatarDesc: 技术爱好者<br>Python<br>django<br>爬虫<br>前端
 url: "http://www.imokey.cn"
 
 # Comment
