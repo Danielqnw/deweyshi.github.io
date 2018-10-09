@@ -48,14 +48,49 @@ cd frp
 
 #### **3、修改配置文件frps.ini**
 
+![](/images/posts/2018-10-08-frp&padavan_tutorial/2.png)
+
 ```sh
 #用vim修改frps.ini
 vim frps.ini
 ```
+
+![](/images/posts/2018-10-08-frp&padavan_tutorial/3.png)
+
+在frps.ini文件中写入如下内容
+example.com替换成自己的域名
+```vim
+#（必须）
+[common]
+#frp服务端端口（必须）
+bind_port = 7000
+#frp服务端密码（必须）
+token = 12345678
+#frp穿透访问内网中的http网站需要的端口
+vhost_http_port = 10080
+#frp穿透访问内网中的https网站需要的端口
+vhost_https_port = 10443
 ```
 
+下面的可选填写
+
+```
+#可视化仪表盘端口（非必须）
+dashboard_port = 7500
+#访问可视化仪表盘的用户名密码，可自行修改（非必须）
+dashboard_user = admin
+dashboard_pwd = admin
 ```
 
+![](/images/posts/2018-10-08-frp&padavan_tutorial/4.png)
+↑仪表盘如上，访问 *你的VPS的公网ip*:*端口号* ，如45.63.1.211:7500
+
+```
+#设置自己的域名（非必须）
+subdomain_host = example.com
+```
+
+假设此项设置为 :example.com，后面的客户端配置(padavan路由器配置） web时将 subdomain设置为 r，然后你将r.example.com解析到服务端后，可以使用r.example.com:10080来访问客户端对应
 
 
 
