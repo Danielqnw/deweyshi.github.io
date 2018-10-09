@@ -98,7 +98,9 @@ subdomain_host = example.com
 ```
 
 如果没有报错，那服务端运行正常。
+
 但是现在还不行，现在frps只是在前台运行，一旦关闭putty，frps就会关闭。
+
 由于VPS一般是不关机的，所以只需要让frps持续在后台运行就行了，输入下面这条命令即可让frps后台运行。
 
 ```sh
