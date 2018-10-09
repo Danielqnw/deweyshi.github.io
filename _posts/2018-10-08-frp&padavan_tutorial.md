@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Padavan路由器设置frp内网穿透"
+title: "Padavan路由器设置frp内网穿透实现外网访问路由器管理页面+外网远程访问内网下的Windows桌面"
 date: 2018-10-08 
 description: "frp，内网穿透，教程，Padavan，路由器，老毛子"
 tag: 教程
@@ -31,7 +31,7 @@ arch
 #### **2、下载对应版本的压缩包解压**
 
 ```sh
-#如果输出 ×86_64 那么就说明架构是 arm64 ，即需要下载带linux_amd64的那个压缩包,目前最新的版本是v0.21.0
+#如果输出 ×86_64 那么就说明架构是 arm64，即需要下载带linux_amd64的那个压缩包,目前最新的版本是v0.21.0
 wget https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_linux_amd64.tar.gz
 ```
 
@@ -74,7 +74,7 @@ vhost_https_port = 10443
 
 下面的可选填写
 
-```
+```vim
 #可视化仪表盘端口（非必须）
 dashboard_port = 7500
 #访问可视化仪表盘的用户名密码，可自行修改（非必须）
@@ -85,7 +85,7 @@ dashboard_pwd = admin
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/4.png)
 ↑仪表盘如上，访问 *你的VPS的公网ip*:*端口号* ，如45.63.1.211:7500
 
-```
+```sh
 #设置自己的域名（非必须）
 subdomain_host = example.com
 ```
