@@ -62,13 +62,13 @@ example.com替换成自己的域名
 #frp服务端端口（必须）
 bind_port = 7000
 
-#frp服务端密码（必须）
+#frp服务端密码（建议必须）
 token = 12345678
 
-#frp穿透访问内网中的http网站需要的端口
+#frp穿透访问内网中的http网站需要的端口（建议必须）
 vhost_http_port = 10080
 
-#frp穿透访问内网中的https网站需要的端口
+#frp穿透访问内网中的https网站需要的端口（建议必须）
 vhost_https_port = 10443
 ```
 下面的可选填写
@@ -102,27 +102,70 @@ subdomain_host = example.com
 由于VPS一般是不关机的，所以只需要让frps持续在后台运行就行了，输入下面这条命令即可让frps后台运行。
 
 ```sh
-nohup ~/frp/frps -c ~/frp/frps.ini &
+nohup /root/frp/frps -c /root/frp/frps.ini &
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### 3、配置padavan路由器客户端（frpc.ini）
+padavan的WiFi下打开192.168.123.1
+扩展功能-花生壳内网版-frp-启用frp内网穿透和frpc客户端
+然后点frp_script配置
+我的配置如下：
+
+```
+#!/bin/sh
+export PATH='/etc/storage/bin:/tmp/script:/etc/storage/script:/opt/usr/sbin:/opt/usr/bin:/opt/sbin:/opt/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin'
+export LD_LIBRARY_PATH=/lib:/opt/lib
+killall frpc frps
+mkdir -p /tmp/frp
+
+#启动frp功能后会运行以下脚本
+#使用方法请查看论坛教程地址: http://www.right.com.cn/forum/thread-191839-1-1.html
+#frp项目地址教程: https://github.com/fatedier/frp/blob/master/README_zh.md
+#请自行修改 auth_token 用于对客户端连接进行身份验证
+# IP查询： http://119.29.29.29/d?dn=github.com
+
+#客户端配置：
+cat > "/tmp/frp/myfrpc.ini" <<-\EOF
+[common]
+server_addr = 你的VPS的公网IP
+server_port = 上面服务端frps.ini的bind_port
+token = 上面服务端frps.ini的token
+
+[web]
+type = http
+local_ip = 127.0.0.1
+local_port = 80
+use_encryption = true
+use_compression = true
+
+#路由器管理页面用户名和密码，自行设置，此处设置的与路由器本身的登录名和密码不同
+http_user = admin（路由器管理页面的用户名）
+http_pwd = 941009941（路由器管理页面的密码）
+
+remote_port = 6000
+subdomain = r
+#假设此项设置为 :r，前面的服务端配置frps.ini时将subdomain_host设置为 example.com，然后你将r.example.com解析到服务端后，可以使用r.example.com:10080来访问路由器管理页面。
+EOF
+
+#启动：
+frpc_enable=`nvram get frpc_enable`
+frpc_enable=${frpc_enable:-"0"}
+frps_enable=`nvram get frps_enable`
+frps_enable=${frps_enable:-"0"}
+if [ "$frpc_enable" = "1" ] ; then
+    frpc -c /tmp/frp/myfrpc.ini &
+fi
+if [ "$frps_enable" = "1" ] ; then
+    frps -c /tmp/frp/myfrps.ini &
+fi
+```
+
+[common]和[web]根据我的描述填写，其他的不用修改,外网情况下浏览器输入 *你的公网ip:10080* 或 *r.example.com:10080*即可访问路由器管理页面啦~
+这是我外网访问成功的界面
+![](/images/posts/2018-10-08-frp&padavan_tutorial/6.png)
+
+如果不行，检查你的防火墙设置和端口占用情况，分析服务端和客户端的运行日志。
+
 
 
 
