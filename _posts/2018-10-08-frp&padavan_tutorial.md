@@ -20,7 +20,7 @@ tag: 教程
 - **用putty连接服务器**
 - **root用户下操作**
 
-![](/images/posts/2018-10-08-frp&padavan_tutorial/1.jpg)
+![](/images/posts/2018-10-08-frp&padavan_tutorial/1.png)
 
 1. 输入命令查看自己VPS的架构
 
