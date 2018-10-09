@@ -25,7 +25,7 @@ arch
 #### **2、下载对应版本的压缩包解压**
 
 ```sh
-#如果输出×86_64那么就说明架构是arm64，即需要下载带linux_amd64的那个压缩包,目前最新的版本是v0.21.0
+#如果
 wget https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_linux_amd64.tar.gz
 ```
 
