@@ -27,9 +27,9 @@ arch
 2. ，下载对应版本的压缩包
 3. 在ubuntu上登录，依次输入如下命令
 
-```sh
+```python
 第三方
-
+import os
 ```
 
 
