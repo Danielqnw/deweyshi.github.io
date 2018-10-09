@@ -22,7 +22,7 @@ tag: 教程
 
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/1.png)
 
-#####1.输入命令查看自己VPS的架构
+##### 1.输入命令查看自己VPS的架构
 
 ```sh
 arch
