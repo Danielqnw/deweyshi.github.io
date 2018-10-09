@@ -22,13 +22,13 @@ tag: 教程
 
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/1.png)
 
-1. 输入命令查看自己VPS的架构
+1.输入命令查看自己VPS的架构
 
 ```sh
 arch
 ```
 
-23. 下载对应版本的压缩包解压安装
+2.下载对应版本的压缩包解压安装
 
 如果输出 ×86_64 那么就说明架构是 arm64 ，即需要下载带linux_amd64的那个压缩包；
 如果输出的是其他的，就需要[**在这里**](https://github.com/fatedier/frp/releases)找 linux 的对应架构的压缩包
