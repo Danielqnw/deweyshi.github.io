@@ -22,7 +22,7 @@ tag: 教程
 
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/1.png)
 
-##### **1.输入命令查看自己VPS的架构**
+#### **1.输入命令查看自己VPS的架构**
 
 ```sh
 arch
@@ -30,13 +30,18 @@ arch
 
 #### **2.下载对应版本的压缩包解压安装**
 
-如果输出 ×86_64 那么就说明架构是 arm64 ，即需要下载带linux_amd64的那个压缩包；
+```sh
+#如果输出 ×86_64 那么就说明架构是 arm64 ，即需要下载带linux_amd64的那个压缩包,目前最新的版本是v0.21.0
+wget https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_linux_amd64.tar.gz
+```
+
 如果输出的是其他的，就需要[**在这里**](https://github.com/fatedier/frp/releases)找 linux 的对应架构的压缩包
 
 ```sh
-#下载最新的版本v0.21.0
-wget https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_linux_amd64.tar.gz
-解压压缩包
+#解压压缩包
+tar -xzvf frp_0.21.0_linux_amd64.tar.gz
+#将解压出来的文件夹名改成frp，方便后面操作
+mv frp_0.18.0_linux_amd64 frp
 ```
 
 3. 在ubuntu上登录，依次输入如下命令
