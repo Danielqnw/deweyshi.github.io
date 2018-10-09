@@ -166,6 +166,7 @@ fi
 
 如果不行，检查你的防火墙设置和端口占用情况，分析服务端和客户端的运行日志。
 
+更多请访问 [**frp中文文档**](https://github.com/fatedier/frp/blob/master/README_zh.md)
 
 
 
