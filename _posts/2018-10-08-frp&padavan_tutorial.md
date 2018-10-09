@@ -10,7 +10,7 @@ tag: 教程
 
 ### 1、需要准备的东西
 
-- Linux VPS，推荐购买[Vultr](https://www.vultr.com/?ref=7435080)的，按小时计费（我的是腾讯云学生机，Linux系统环境是Ubuntu Server 16.04.1 LTS 64位）
+- Linux VPS，推荐购买[**Vultr**](https://www.vultr.com/?ref=7435080)的，按小时计费（我的是腾讯云学生机，Linux系统环境是Ubuntu Server 16.04.1 LTS 64位）
 
 - 刷了Padavan固件的路由器（我的是小米路由器青春版R1CL,padavan固件最新版）
 
@@ -22,13 +22,13 @@ tag: 教程
 
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/1.png)
 
-#### **1.输入命令查看自己VPS的架构**
+#### **1、输入命令查看自己VPS的架构**
 
 ```sh
 arch
 ```
 
-#### **2.下载对应版本的压缩包解压安装**
+#### **2、下载对应版本的压缩包解压**
 
 ```sh
 #如果输出 ×86_64 那么就说明架构是 arm64 ，即需要下载带linux_amd64的那个压缩包,目前最新的版本是v0.21.0
@@ -42,14 +42,20 @@ wget https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_linux_
 tar -xzvf frp_0.21.0_linux_amd64.tar.gz
 #将解压出来的文件夹名改成frp，方便后面操作
 mv frp_0.18.0_linux_amd64 frp
+#打开文件夹frp
+cd frp
 ```
 
-3. 在ubuntu上登录，依次输入如下命令
+#### **3、修改配置文件frps.ini**
 
-```python
-第三方
-import os
+```sh
+#用vim修改frps.ini
+vim frps.ini
 ```
+```
+
+```
+
 
 
 
