@@ -9,8 +9,8 @@ avatarDesc: Python/Django<br>爬虫/前端
 url: "http://www.imokey.cn"
 
 # Comment
-#comment:
-#    disqus: leopard
+comment:
+    disqus: leopard
     # uyan: 2143225  # 有言id,登录有言官网申请
 
 # Social
