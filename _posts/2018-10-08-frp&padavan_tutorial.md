@@ -15,11 +15,15 @@ tag: 教程
 - **用putty连接服务器**
 - **root用户下操作**
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/1.png)
+
 #### **1、输入命令查看自己VPS的架构**
+
 ```sh
 arch
 ```
+
 #### **2、下载对应版本的压缩包解压**
+
 ```sh
 #如果输出×86_64那么就说明架构是arm64，即需要下载带linux_amd64的那个压缩包,目前最新的版本是v0.21.0
 wget https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_linux_amd64.tar.gz
