@@ -192,21 +192,12 @@ subdomain = router（非必须）
 
 应用frp页面设置后看看padavan的运行日志，如果提示[rdpqiang] start proxy success，说明成功啦~
 接下来我们就可以从 控制主机（以下叫主机A） 远程控制 被控主机（以下叫主机B）。
-主机A打开远程桌面，输入 *VPS的公网IP:remote_port* ，
-
-
-
+主机A打开远程桌面，输入 *VPS的公网IP:remote_port* ，即可访问主机B的桌面啦~
+![](/images/posts/2018-10-08-frp&padavan_tutorial/8.png)
 ### 4、说明一下
-
-
-
-
-
-
-
-
-
-更多请访问 [**frp中文文档**](https://github.com/fatedier/frp/blob/master/README_zh.md)
+1.每次修改客户端的frp_script后都要应用本页设置
+2.客户端配置时的subdomain可以不填。如果不填，那么访问时只能用VPS的公网ip加端口来访问；如果你有域名，①那么可以在服务端的frps.ini中的subdomain_host填上自己的域名，②在客户端的frpc.ini（padavan里面的frp_script）中的subdomain填任意内容（例如router），③在自己的域名管理网站添加一条解析，例如将router.example.com解析到你VPS的公网ip，然后就可以用域名加端口访问。
+3.更多请访问 [**frp中文文档**](https://github.com/fatedier/frp/blob/master/README_zh.md)
 
 
 
