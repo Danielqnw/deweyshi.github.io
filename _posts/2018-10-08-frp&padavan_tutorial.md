@@ -89,7 +89,7 @@ dashboard_pwd = admin
 subdomain_host = example.com
 ```
 
-假设此项设置为 :example.com，后面的客户端配置(padavan路由器配置） web时将 subdomain设置为 r，然后你将r.example.com解析到服务端后，可以使用r.example.com:10080来访问路由器管理页面。
+假设此项设置为 :example.com，后面的客户端配置(padavan路由器配置） web时将 subdomain设置为 router，然后你将r.example.com解析到服务端后，可以使用r.example.com:10080来访问路由器管理页面。
 #### **4、让服务端持续运行**
 输入下面命令运行服务端
 
@@ -151,8 +151,8 @@ http_user = admin（路由器管理页面的用户名）
 http_pwd = 941009941（路由器管理页面的密码）
 
 remote_port = 6000
-subdomain = r
-#假设此项设置为 :r，前面的服务端配置frps.ini时
+subdomain = router
+#假设此项设置为 :router，前面的服务端配置frps.ini时
 #将subdomain_host设置为example.com，然后你将
 #r.example.com解析到服务端后，可以使用r.example.com:10080
 #来访问路由器管理页面。
@@ -171,7 +171,7 @@ if [ "$frps_enable" = "1" ] ; then
 fi
 ```
 
-[common]和[web]根据我的描述填写，其他的不用修改。
+[common]和[web]根据我的描述填写，其他的不用修改。点击最下面应用本页面设置。
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/7.png)
 这是我的padavan的运行日志，[web] start proxy success就说明内网穿透成功啦~
 外网情况下浏览器输入 *你的公网ip:10080* 或 *r.example.com:10080*即可访问路由器管理页面啦~
@@ -183,15 +183,20 @@ fi
 
 ```
 [rdpqiang]
-type = tcp
-local_ip = 被控制主机的本地ip，例如（192.168.123.215）
-local_port = Windows3389
-remote_port = 5200
-subdomain = r
+type = tcp（必须）
+local_ip = 被控制主机的本地ip，例如（192.168.123.215）（必须）
+local_port = Windows默认的远程桌面端口，一般是3389（必须）
+remote_port = 本地与服务端通信的端口，我是5200（必须）
+subdomain = router（非必须）
 ```
 
+应用frp页面设置后看看padavan的运行日志，如果提示[rdpqiang] start proxy success，说明成功啦~
+接下来我们就可以从 控制主机（以下叫主机A） 远程控制 被控主机（以下叫主机B）。
+主机A打开远程桌面，输入 *VPS的公网IP:remote_port* ，
 
 
+
+### 4、说明一下
 
 
 
