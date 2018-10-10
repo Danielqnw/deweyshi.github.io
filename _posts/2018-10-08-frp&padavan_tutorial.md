@@ -110,8 +110,11 @@ nohup /root/frp/frps -c /root/frp/frps.ini &
 ### 3、配置padavan路由器客户端（frpc.ini）
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/5.png)
 padavan的WiFi下打开192.168.123.1
+
 扩展功能-花生壳内网版-frp-启用frp内网穿透和frpc客户端
+
 然后点frp_script配置
+
 我的配置如下：
 
 ```
