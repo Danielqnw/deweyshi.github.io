@@ -83,7 +83,7 @@ dashboard_pwd = admin
 ```
 
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/4.png)
-↑仪表盘如上，访问 *你的VPS的公网ip*:*端口号* ，如45.63.1.211:7500
+↑仪表盘如上，访问你的 *VPS的公网ip*:*端口号dashboard_port* ，如45.63.1.211:7500
 
 ```sh
 #设置自己的域名（非必须）
