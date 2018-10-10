@@ -53,6 +53,7 @@ vim frps.ini
 
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/3.png)
 在frps.ini文件中写入如下内容
+
 example.com替换成自己的域名
 
 ```vim
