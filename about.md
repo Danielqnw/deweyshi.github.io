@@ -22,5 +22,5 @@ title: 关于我
 为未来的生活感到焦虑。
 
 ### 我的联系方式
-邮箱：i@imokey.cn
+邮箱：<i@imokey.cn>
 
