@@ -90,7 +90,7 @@ dashboard_pwd = admin
 subdomain_host = example.com
 ```
 
-假设此项设置为 :example.com，后面的客户端配置(padavan路由器配置） web时将 subdomain设置为 router，然后你将r.example.com解析到服务端后，可以使用r.example.com:10080来访问路由器管理页面。
+假设此项设置为 :example.com，后面的客户端配置(padavan路由器配置） web时将 subdomain设置为 router，然后你将router.example.com解析到服务端后，可以使用router.example.com:10080来访问路由器管理页面。
 #### **4、让服务端持续运行**
 输入下面命令运行服务端
 
