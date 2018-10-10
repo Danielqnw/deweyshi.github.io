@@ -108,12 +108,13 @@ nohup /root/frp/frps -c /root/frp/frps.ini &
 ```
 
 ### 3、配置padavan路由器客户端（frpc.ini）
+#### **1、实现外网访问路由器管理页面**
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/5.png)
 padavan的WiFi下打开192.168.123.1
 
 扩展功能-花生壳内网版-frp-启用frp内网穿透和frpc客户端
 
-然后点frp_script配置
+然后点frp_script配置，这个里面已经预先写好了脚本，只需要我们修改#客户端配置下的[common]和[web]
 
 我的配置如下：
 
@@ -144,13 +145,17 @@ local_port = 80
 use_encryption = true
 use_compression = true
 
-#路由器管理页面用户名和密码，自行设置，此处设置的与路由器本身的登录名和密码不同
+#路由器管理页面用户名和密码，自行设置，此处
+#设置的与路由器本身的登录名和密码不同
 http_user = admin（路由器管理页面的用户名）
 http_pwd = 941009941（路由器管理页面的密码）
 
 remote_port = 6000
 subdomain = r
-#假设此项设置为 :r，前面的服务端配置frps.ini时将subdomain_host设置为 example.com，然后你将r.example.com解析到服务端后，可以使用r.example.com:10080来访问路由器管理页面。
+#假设此项设置为 :r，前面的服务端配置frps.ini时
+#将subdomain_host设置为example.com，然后你将
+#r.example.com解析到服务端后，可以使用r.example.com:10080
+#来访问路由器管理页面。
 EOF
 
 #启动：
@@ -166,11 +171,35 @@ if [ "$frps_enable" = "1" ] ; then
 fi
 ```
 
-[common]和[web]根据我的描述填写，其他的不用修改,外网情况下浏览器输入 *你的公网ip:10080* 或 *r.example.com:10080*即可访问路由器管理页面啦~
+[common]和[web]根据我的描述填写，其他的不用修改。
+![](/images/posts/2018-10-08-frp&padavan_tutorial/7.png)
+这是我的padavan的运行日志，[web] start proxy success就说明内网穿透成功啦~
+外网情况下浏览器输入 *你的公网ip:10080* 或 *r.example.com:10080*即可访问路由器管理页面啦~
 这是我外网访问成功的界面
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/6.png)
-
 如果不行，检查你的防火墙设置和端口占用情况，分析服务端和客户端的运行日志。
+#### **2、实现外网远程访问内网下的Windows桌面**
+先说一下我在这上门踩的坑，Windows 家庭版中的远程桌面被微软阉割了，所以如果被访问的主机装的这个版本是不能被远程控制的，但是道高一尺魔高一丈，[**解决方案在这**](https://www.jianshu.com/p/bf3001099cc4)。
+
+```
+[rdpqiang]
+type = tcp
+local_ip = 被控制主机的本地ip，例如（192.168.123.215）
+local_port = Windows3389
+remote_port = 5200
+subdomain = r
+```
+
+
+
+
+
+
+
+
+
+
+
 
 更多请访问 [**frp中文文档**](https://github.com/fatedier/frp/blob/master/README_zh.md)
 
