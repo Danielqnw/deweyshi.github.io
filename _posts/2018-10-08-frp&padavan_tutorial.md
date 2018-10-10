@@ -25,7 +25,7 @@ arch
 #### **2、下载对应版本的压缩包解压**
 
 ```sh
-#如果输出```×86_64```那么就说明架构是```arm64```，即需要下载带linux_amd64的那个压缩包,目前最新的版本是v0.21.0
+#如果输出×86_64那么就说明架构是arm64，即需要下载带linux_amd64的那个压缩包,目前最新的版本是v0.21.0
 
 wget https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_linux_amd64.tar.gz
 ```
@@ -85,7 +85,7 @@ dashboard_pwd = admin
 ```
 
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/4.png)
-↑仪表盘如上，访问你的 *VPS的公网ip*:*端口号dashboard_port* ，如45.63.1.211:7500
+↑仪表盘如上，访问地址为你的 *VPS的公网ip*:*端口号dashboard_port* ，如45.63.1.211:7500
 
 ```sh
 #设置自己的域名（非必须）
@@ -102,7 +102,7 @@ subdomain_host = example.com
 
 如果没有报错，那服务端运行正常。
 
-但是现在还不行，现在frps只是在前台运行，一旦关闭putty，frps就会关闭。
+但是现在服务端的设置还没完成，现在frps只是在前台运行，一旦关闭putty，frps就会关闭。
 
 由于VPS一般是不关机的，所以只需要让frps持续在后台运行就行了，输入下面这条命令即可让frps后台运行。
 
