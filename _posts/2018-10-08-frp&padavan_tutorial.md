@@ -72,7 +72,9 @@ vhost_http_port = 10080
 #frp穿透访问内网中的https网站需要的端口（建议必须）
 vhost_https_port = 10443
 ```
-下面的可选填写
+
+下面的可根据自己需要选填
+
 ```vim
 #可视化仪表盘端口（非必须）
 dashboard_port = 7500
