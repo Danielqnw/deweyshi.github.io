@@ -117,7 +117,7 @@ padavan的WiFi下打开192.168.123.1
 
 扩展功能-花生壳内网版-frp-启用frp内网穿透和frpc客户端
 
-然后点frp_script配置，这个里面已经预先写好了脚本，只需要我们修改#客户端配置下的[common]和[web]
+然后点frp_script配置，这个里面已经预先写好了脚本，只需要我们修改"客户端配置"下的[common]和[web]
 
 我的配置如下：
 
@@ -151,7 +151,7 @@ use_compression = true
 #路由器管理页面用户名和密码，自行设置，此处
 #设置的与路由器本身的登录名和密码不同
 http_user = admin（路由器管理页面的用户名）
-http_pwd = 941009941（路由器管理页面的密码）
+http_pwd = 12345678（路由器管理页面的密码）
 
 remote_port = 6000
 subdomain = router
@@ -177,8 +177,11 @@ fi
 [common]和[web]根据我的描述填写，其他的不用修改。点击最下面应用本页面设置。
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/7.png)
 这是我的padavan的运行日志，[web] start proxy success就说明内网穿透成功啦~
+
 外网情况下浏览器输入 *你的公网ip:10080* 或 *r.example.com:10080*即可访问路由器管理页面啦~
+
 这是我外网访问成功的界面
+
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/6.png)
 如果不行，检查你的防火墙设置和端口占用情况，分析服务端和客户端的运行日志。
 #### **2、实现外网远程访问内网下的Windows桌面**
