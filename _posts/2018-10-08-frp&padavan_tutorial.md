@@ -14,6 +14,7 @@ tag: 教程
 - **下面所有操作在服务器上完成**
 - **用putty连接服务器**
 - **root用户下操作**
+
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/1.png)
 
 #### **1、输入命令查看自己VPS的架构**
@@ -44,6 +45,7 @@ cd frp
 ```
 
 #### **3、修改配置文件frps.ini**
+
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/2.png)
 
 ```sh
@@ -52,6 +54,7 @@ vim frps.ini
 ```
 
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/3.png)
+
 在frps.ini文件中写入如下内容
 
 example.com替换成自己的域名
@@ -85,6 +88,7 @@ dashboard_pwd = admin
 ```
 
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/4.png)
+
 ↑仪表盘如上，访问地址为你的 *VPS的公网ip*:*端口号dashboard_port* ，如45.63.1.211:7500
 
 ```sh
@@ -112,7 +116,9 @@ nohup /root/frp/frps -c /root/frp/frps.ini &
 
 ### 3、配置padavan路由器客户端（frpc.ini）
 #### **1、实现外网访问路由器管理页面**
+
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/5.png)
+
 padavan的WiFi下打开192.168.123.1
 
 扩展功能-花生壳内网版-frp-启用frp内网穿透和frpc客户端
@@ -183,6 +189,7 @@ fi
 这是我外网访问成功的界面
 
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/6.png)
+
 如果不行，检查你的防火墙设置和端口占用情况，分析服务端和客户端的运行日志。
 #### **2、实现外网远程访问内网下的Windows桌面**
 先说一下我在这上门踩的坑，Windows 家庭版中的远程桌面被微软阉割了，所以如果被访问的主机装的这个版本是不能被远程控制的，但是道高一尺魔高一丈，[**解决方案在这**](https://www.jianshu.com/p/bf3001099cc4)。
@@ -199,11 +206,13 @@ subdomain = router（非必须）
 应用frp页面设置后看看padavan的运行日志，如果提示[rdpqiang] start proxy success，说明成功啦~
 接下来我们就可以从 控制主机（以下叫主机A） 远程控制 被控主机（以下叫主机B）。
 主机A打开远程桌面，输入 *VPS的公网IP:remote_port* ，即可访问主机B的桌面啦~
+
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/8.png)
+
 ### 4、说明一下
-1.每次修改客户端的frp_script后都要应用本页设置
-2.客户端配置时的subdomain可以不填。如果不填，那么访问时只能用VPS的公网ip加端口来访问；如果你有域名，①那么可以在服务端的frps.ini中的subdomain_host填上自己的域名，②在客户端的frpc.ini（padavan里面的frp_script）中的subdomain填任意内容（例如router），③在自己的域名管理网站添加一条解析，例如将router.example.com解析到你VPS的公网ip，然后就可以用域名加端口访问。
-3.更多请访问 [**frp中文文档**](https://github.com/fatedier/frp/blob/master/README_zh.md)
+1. 每次修改客户端的frp_script后都要应用本页设置。
+2. 客户端配置时的subdomain可以不填。如果不填，那么访问时只能用VPS的公网ip加端口来访问；如果你有域名，①那么可以在服务端的frps.ini中的subdomain_host填上自己的域名，②在客户端的frpc.ini（padavan里面的frp_script）中的subdomain填任意内容（例如router），③在自己的域名管理网站添加一条解析，例如将router.example.com解析到你VPS的公网ip，然后就可以用域名加端口访问。
+3. 更多请访问 [**frp中文文档**](https://github.com/fatedier/frp/blob/master/README_zh.md)
 
 
 
