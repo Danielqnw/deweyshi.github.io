@@ -181,7 +181,9 @@ fi
 ```
 
 [common]和[web]根据我的描述填写，其他的不用修改。点击最下面应用本页面设置。
+
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/7.png)
+
 这是我的padavan的运行日志，[web] start proxy success就说明内网穿透成功啦~
 
 外网情况下浏览器输入 *你的公网ip:10080* 或 *r.example.com:10080*即可访问路由器管理页面啦~
