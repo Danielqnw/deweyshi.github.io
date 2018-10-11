@@ -38,7 +38,7 @@ wget https://github.com/fatedier/frp/releases/download/v0.21.0/frp_0.21.0_linux_
 tar -xzvf frp_0.21.0_linux_amd64.tar.gz
 
 #将解压出来的文件夹名改成frp，方便后面操作
-mv frp_0.18.0_linux_amd64 frp
+mv frp_0.21.0_linux_amd64 frp
 
 #打开文件夹frp
 cd frp
