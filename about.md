@@ -19,7 +19,19 @@ title: 关于我
 
 为未来的生活感到焦虑。
 
+### 石头实验
+
+我的博客，随意取的名字，因为我喜欢瞎搞......
+
+
+### imokey.cn
+
+我的域名，申请的时候随便填的，后来发现居然有I'm okey的意思......
+
 ### 我的联系方式
+
 邮箱：<i@imokey.cn>
+
 ### 关于本站
+
 基于[GitHub Pages](https://pages.github.com/)建立，主题是[leopardpan](http://baixin.io/)的，在此感谢！
