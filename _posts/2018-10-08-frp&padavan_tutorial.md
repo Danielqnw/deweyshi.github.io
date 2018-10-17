@@ -224,16 +224,19 @@ subdomain = router（非必须）
 
 提示
 ```frpc启动失败, 注意检查端口是否有冲突,程序是否下载完整,10 秒后自动尝试重新启动```
-解决方法：
-1. padavan路由器网络环境下使用[WinSCP](https://winscp.net/eng/docs/lang:chs)连接路由器
+
+**解决方法：**
+1.padavan路由器网络环境下使用[WinSCP](https://winscp.net/eng/docs/lang:chs)连接路由器
 
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/10.png)
 
-2. 删除```/tmp/```下的```frp```文件夹
+2.删除```/tmp/```下的```frp```文件夹
 
 ![](/images/posts/2018-10-08-frp&padavan_tutorial/11.png)
 
-3. 重启路由器就好了
+3.重启路由器就好了
 
-4. 如果还是不行，就更新固件。在192.168.123.1路由管理页面，系统管理→控制台，输入```wget --no-check-certificate -O- https://opt.cn2qq.com/opt-script/up.sh > /tmp/up.sh && bash < /tmp/up.sh```点刷新，等待几分钟重启就OK了。
+![](/images/posts/2018-10-08-frp&padavan_tutorial/12.png)
+
+4.如果还是不行，就更新固件。在192.168.123.1路由管理页面，系统管理→控制台，输入```wget --no-check-certificate -O- https://opt.cn2qq.com/opt-script/up.sh > /tmp/up.sh && bash < /tmp/up.sh```点刷新，等待自动更新重启就OK了。
 
