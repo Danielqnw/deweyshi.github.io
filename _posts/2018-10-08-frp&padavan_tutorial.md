@@ -218,5 +218,22 @@ subdomain = router（非必须）
 2. 客户端配置时的subdomain可以不填。如果不填，那么访问时只能用VPS的公网ip加端口来访问；如果你有域名，①那么可以在服务端的frps.ini中的subdomain_host填上自己的域名，②在客户端的frpc.ini（padavan里面的frp_script）中的subdomain填任意内容（例如router），③在自己的域名管理网站添加一条解析，例如将router.example.com解析到你VPS的公网ip，然后就可以用域名加端口访问。
 3. 更多请访问 [**frp中文文档**](https://github.com/fatedier/frp/blob/master/README_zh.md)
 
+### 5、目前遇到的问题
 
+![](/images/posts/2018-10-08-frp&padavan_tutorial/9.png)
+
+提示
+```frpc启动失败, 注意检查端口是否有冲突,程序是否下载完整,10 秒后自动尝试重新启动```
+解决方法：
+1. padavan路由器网络环境下使用[WinSCP](https://winscp.net/eng/docs/lang:chs)连接路由器
+
+![](/images/posts/2018-10-08-frp&padavan_tutorial/10.png)
+
+2. 删除```/tmp/```下的```frp```文件夹
+
+![](/images/posts/2018-10-08-frp&padavan_tutorial/11.png)
+
+3. 重启路由器就好了
+
+4. 如果还是不行，就更新固件。在192.168.123.1路由管理页面，系统管理→控制台，输入```wget --no-check-certificate -O- https://opt.cn2qq.com/opt-script/up.sh > /tmp/up.sh && bash < /tmp/up.sh```点刷新，等待几分钟重启就OK了。
 
