@@ -1,0 +1,13 @@
+
+<students>
+	<student>
+		<name>zs</name>
+		<age>18</age>
+		<do>stu</do>
+	</student>
+	<student>
+		<name>li</name>
+		<age>20</age>
+		<do>journalist</do>
+	</student>
+</students>
