@@ -1,0 +1,72 @@
+﻿<html>
+<head>
+	<title>增删改查</title>
+</head>
+<body>
+	<h3>请输入信息</h3>
+	<input id="xm" type="text" placeholder="请输入姓名"><br><br>
+	<input id="age" type="number" placeholder="请输入年龄"><br><br>
+	<input id="mm" type="password" placeholder="请输入密码"><br><br>
+	<input id="yanse"type="color" placeholder="请输入颜色"><br><br>
+	<input id="zeng" type="button" value="add">
+	<input id="shan" type="button" value="remove">
+	<input id="gai" type="button" value="replace">
+	<input id="cha_age" type="button" value="search">
+	<input id="add_age" type="button" value="zhangda">
+	<p id="pp"> 查到的年龄是： </p>
+</body>
+<script>
+var add_btn = document.getElementById("zeng");
+var shan_btn = document.getElementById("shan");
+var gai_btn = document.getElementById("gai");
+var cha_btn = document.getElementById("cha_age");
+var p = document.getElementById("pp");
+var add_age = document.getElementById("add_age");
+add_btn.addEventListener("click",zeng);
+shan_btn.addEventListener("click",shan);
+gai_btn.addEventListener("click",gai);
+cha_btn.addEventListener("click",chaAge);
+add_age.addEventListener("click",zhangda);
+
+var xm_input = document.getElementById("xm");
+var age_input = document.getElementById("age");
+var mm_input = document.getElementById("mm");
+var yanse_input = document.getElementById("yanse");
+
+
+function zeng(){
+	localStorage.setItem("姓名",xm_input.value);
+	localStorage.setItem("age",age_input.value);
+	localStorage.setItem("pwd",mm_input.value);
+	localStorage.setItem("color",yanse_input.value);
+}
+
+function shan(){
+	//删一条记录
+	//localStorage.removeItem("姓名");
+	//我曾经毁了我的一切
+	localStorage.clear();
+	
+}
+function  gai(){
+	//改变一条记录的值
+	localStorage.age = 18;
+	
+}
+function  chaAge(){
+	//改变一条记录的值
+	var result = localStorage.age;
+	console.log(result);
+	age_input.value = result;
+	p.innerText = "查到的年龄是："+result;
+}
+
+function zhangda(){
+	var result = Number(localStorage.age)+1;
+	console.log(result);
+	age_input.value = result;
+	localStorage.setItem("age",result);
+	p.innerText = "查到的年龄是："+result;
+}
+</script>
+</html>
