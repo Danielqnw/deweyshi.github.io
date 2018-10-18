@@ -1,0 +1,9 @@
+{"students":[
+	{"student":[
+		{"name":"zs","age":18,"do":"stu","teachers":[
+			{"teacher":{"name":"huanx","major":"shey","level":"l"}},
+			{"teacher":{"name":"xiaoh","major":"dian","level":"h"}}
+		]},
+	{"student":[{"name":"li","age":20,"do":"journalist"}]}
+	]}
+]}
