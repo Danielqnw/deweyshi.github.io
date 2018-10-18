@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>增删改查</title>
+</head>
+<body>
+	<h3>请输入信息</h3>
+	<input id="xm" type="text" placeholder="请输入姓名"><br><br>
+	<input id="nl" type="number" placeholder="请输入年龄"><br><br>
+	<input id="mm" type="password" placeholder="请输入密码"><br><br>
+	<input id="ys" type="color" placeholder="请输入颜色"><br><br>
+	<input id="zeng" type="button" value="add">
+	<input id="shan" type="button" value="remove">
+	<input id="gai" type="button" value="replace">
+	<input id="cha" type="button" value="search">
+	<p id="pp">您的年龄是：</p>
+</body>
+<script>
+
+var add_btn = document.getElementById("zeng");
+var shan_btn = document.getElementById("shan");
+var gai_btn = document.getElementById("gai");
+var cha_btn = document.getElementById("cha");
+var p = document.getElementById("pp");
+add_btn.addEventListener("click",zeng);
+shan_btn.addEventListener("click",shan);
+gai_btn.addEventListener("click",gai);
+cha_btn.addEventListener("click",chaAge);
+
+var xm_input = document.getElementById("xm");
+var age_input = document.getElementById("age");
+var mm_input = document.getElementById("mm");
+var yanse_input = document.getElementById("yanse");
+
+function zeng(){
+	localStorage.setItem("xingming",xm_input.value);
+	localStorage.setItem("age",age_input.value);
+	localStorage.setItem("pwd",mm_input.value);
+	localStorage.setItem("yanse",yanse_input.value);
+}
+
+function shan(){
+	//localStorage.removeItem("xingming");
+	localStorage.clear();
+}
+
+function gai(){
+	//localStorage.removeItem("xingming");
+	localStorage.clear();
+}
+
+function  chaAge(){
+	//改变一条记录的值
+	var result = localStorage.age;
+	console.log(result);
+	age_input.value = result;
+	p.innerText = "查到的年龄是："+result;
+	console.log(localStorage)
+}
+
+
+function zhangda(){
+	
+}
+</script>
+</html>
