@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>add information</title>
+</head>
+<body>
+	<h3>请输入信息</h3>
+	<input id="xm" type="text" placeholder="请输入姓名"><br><br>
+	<input id="nl" type="number" placeholder="请输入年龄"><br><br>
+	<input id="mm" type="password" placeholder="请输入密码"><br><br>
+	<input id="ys" type="color" placeholder="请输入颜色"><br><br>
+	<input id="haha" type="button" value="点我"><br><br>
+</body>
+<script>
+/*
+function jisuanzhouzhou(chang,kuan){
+	var zhouzhou = (chang+kuan)*2;
+	console.log(zhouzhou);
+}
+
+jisuanzhouzhou(5,6);
+jisuanzhouzhou(51,16);
+jisuanzhouzhou(5,61);
+*/
+
+var btn = document.getElementById("haha");
+var xingmingshuru = document.getElementById("xm");
+var nianling = document.getElementById("nl");
+var mima = document.getElementById("mm");
+var yanse = document.getElementById("ys");
+btn.addEventListener("click",ruhechuli);
+var k=0;
+function ruhechuli(){
+	//console.log("dianji");
+	console.log(xingmingshuru.value);
+	console.log(nianling.value);
+	console.log(mima.value);
+	console.log(yanse.value);
+	//localStorage.setItem(key,value);
+	localStorage.setItem("name"+ k,xingmingshuru.value);
+	k = k + 1;
+}
+
+</script>
+</html>
