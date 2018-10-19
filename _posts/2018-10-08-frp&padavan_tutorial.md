@@ -215,8 +215,9 @@ subdomain = router（非必须）
 
 ### 4、说明一下
 1. 每次修改客户端的frp_script后都要应用本页设置。
-2. 客户端配置时的subdomain可以不填。如果不填，那么访问时只能用VPS的公网ip加端口来访问；如果你有域名，①那么可以在服务端的frps.ini中的subdomain_host填上自己的域名，②在客户端的frpc.ini（padavan里面的frp_script）中的subdomain填任意内容（例如router），③在自己的域名管理网站添加一条解析，例如将router.example.com解析到你VPS的公网ip，然后就可以用域名加端口访问。
-3. 更多请访问 [**frp中文文档**](https://github.com/fatedier/frp/blob/master/README_zh.md)
+2. 一个frps只能对应一个frpc
+3. 客户端配置时的subdomain可以不填。如果不填，那么访问时只能用VPS的公网ip加端口来访问；如果你有域名，①那么可以在服务端的frps.ini中的subdomain_host填上自己的域名，②在客户端的frpc.ini（padavan里面的frp_script）中的subdomain填任意内容（例如router），③在自己的域名管理网站添加一条解析，例如将router.example.com解析到你VPS的公网ip，然后就可以用域名加端口访问。
+4. 更多请访问 [**frp中文文档**](https://github.com/fatedier/frp/blob/master/README_zh.md)
 
 ### 5、目前遇到的问题
 
