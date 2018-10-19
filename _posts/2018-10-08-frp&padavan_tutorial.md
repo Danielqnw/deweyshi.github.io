@@ -241,3 +241,10 @@ subdomain = router（非必须）
 
 4.如果还是不行，就更新固件。在192.168.123.1路由管理页面，系统管理→控制台，输入```wget --no-check-certificate -O- https://opt.cn2qq.com/opt-script/up.sh > /tmp/up.sh && bash < /tmp/up.sh```点刷新，等待自动更新重启就OK了。
 
+5.如果还是不行，可能是padavan系统时间不正确的原因。系统管理→系统时间→   ```NTP 服务器 1:```和```NTP 服务器 2:```分别填入下列内容
+```
+time1.aliyun.com
+time1.apple.com
+```
+```应用本页设置```就可以了~
+
